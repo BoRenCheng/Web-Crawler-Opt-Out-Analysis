@@ -1,0 +1,4 @@
+﻿cluster,n,share,mean_ai_block_count,mean_disallow_scope_ratio,mean_crawl_delay_norm,mean_blocks_search_engines,mean_global_disallow_root,mean_ai_only_block,mean_wildcard_usage,mean_sitemap_present,smd_ai_block_count,smd_disallow_scope_ratio,smd_crawl_delay_norm,smd_blocks_search_engines,smd_global_disallow_root,smd_ai_only_block,smd_wildcard_usage,smd_sitemap_present
+Full Opt-out,43,0.439,2.163,9.493,0.36,0.977,0.14,0.0,1.0,0.767,0.18,0.953,-0.036,1.974,0.154,-0.816,0.787,0.463
+Partial Opt-out: AI-targeted,17,0.173,4.941,2.853,0.118,0.0,0.059,1.0,0.765,0.471,1.074,-0.372,-0.208,-1.048,-0.205,2.641,-0.236,-0.435
+Partial Opt-out: Rate-limited,38,0.388,0.0,1.595,0.553,0.0,0.105,0.0,0.684,0.579,-0.836,-0.764,0.163,-1.415,-0.036,-0.748,-0.674,-0.218
