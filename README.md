@@ -32,51 +32,48 @@
 ## 🎓 發表紀錄與引用 (Publication & Citation)
 本研究由 鄭博仁 (Bo-Ren Cheng) 於 2026 年 4 月在日本東京 早稻田大學 (Waseda University) 進行口頭發表。
 
+
+
+### 📘 1. 數據採集與特徵工程 (Data Collection)
+**數據路徑**: `data_collection/robots_txt_results_FINAL.xlsx`
+
+我們從 2024 BEDC 全球前百大網站中成功解析出 98 份有效樣本，並將非結構化的規則轉化為 **8 項結構化特徵**：
+* **`ai_block_count`**: 針對 AI 爬蟲的阻斷指令數量。
+* **`blocks_search_engines`**: 是否限制傳統搜尋引擎。
+* **`global_disallow_root`**: 是否設置全域根目錄阻斷 (`Disallow: /`)。
+* **`disallow_scope_ratio`**: 阻斷路徑佔整體宣告規則的比例。
+* **`crawl_delay_norm`**: 爬取延遲時間 (Crawl-delay) 之標準化數值。
+* **`ai_only_block`**: 是否僅精準針對 AI 爬蟲進行阻斷。
+* **`wildcard_usage`**: 通配符 (`*`, `$`) 在規則中的使用頻率。
+* **`sitemap_present`**: 檔案中是否包含 Sitemap 宣告。
+
+### 🧮 2. 聚類分析 (Clustering Results)
+透過手肘法 (Elbow Method) 確定最佳群數 $K=3$，將網站歸納為三種治理策略：
+
+| 檔案名稱 | 聚類標籤 | 策略描述 |
+| :--- | :--- | :--- |
+| `websites_full-opt-out.csv` | **Cluster A** | **全面拒絕型**: 採行最嚴格的全面阻斷規則。 |
+| `websites_partial-opt-out-ai-targeted.csv` | **Cluster B** | **AI 特定阻斷型**: 精準針對 AI 爬蟲進行限制。 |
+| `websites_partial-opt-out-rate-limited.csv` | **Cluster C** | **限速存取型**: 透過延遲或部分限制維持平衡。 |
+
+### 📊 3. 維度縮減 (Analysis Summary)
+**分析摘要**: `analysis_summary/summary_all_features_with_smd.csv`
+* **PCA 分析**: 成功將多維特徵縮減至兩個核心維度（阻斷強度與模式差異化），解釋了 **41.9%** 的數據變異。
+* **統計驗證**: 提供各聚類特徵的平均值、標準差與標準化平均差異 (SMD)，驗證聚類結果的科學顯著性。
+
+---
+
+## 📂 儲存庫結構 (Repository Structure)
 ```text
-Cheng, B. R., & Cheng, C. Y. (2026). Clustering-Based Big Data Analysis of Web Crawler Opt-Out Strategies: A Scientific Approach to Robots.txt Governance. In Proceedings of the 11th International Conference on Big Data Analytics (ICBDA 2026).
-
-
-我想要結合這些內容:
-
-## 📘 1. Data Collection
-File: `data_collection/robots_txt_results_FINAL.xlsx`
-
-- 98 valid robots.txt files from the BEDC Top-100 global websites (2024)
-- Parsed into 8 structured features:
-  - `ai_block_count`
-  - `blocks_search_engines`
-  - `global_disallow_root`
-  - `disallow_scope_ratio`
-  - `crawl_delay_norm`
-  - `ai_only_block`
-  - `wildcard_usage`
-  - `sitemap_present`
-
----
-
-## 🧮 2. Clustering Results
-Folder: `clustering_results/`
-
-Contains three CSV files representing the websites in each opt-out strategy:
-
-| File | Cluster Label | Description |
-|------|----------------|-------------|
-| `websites_full-opt-out.csv` | A | Full Opt-out (comprehensive blocking) |
-| `websites_partial-opt-out-ai-targeted.csv` | B | Partial Opt-out: AI-targeted |
-| `websites_partial-opt-out-rate-limited.csv` | C | Partial Opt-out: Rate-limited |
-
----
-
-## 📊 3. Analysis Summary
-File: `analysis_summary/summary_all_features_with_smd.csv`
-
-- Summarizes feature statistics (mean, SD, SMD) across clusters.
-
----
-
-## 🧾 Citation
-If you use this dataset, please cite:
-
-> Cheng, B.-R., & Cheng, C.-Y. . *Robots.txt opt-out dataset (BEDC Top-100, 2024)* [Data set]. GitHub. [https://github.com/yourname/robots-optout-dataset](https://github.com/Raycheng0629/robots_txt-optout-dataset)
-
--
+/
+├── data_collection/
+│   └── robots_txt_results_FINAL.xlsx    # 原始 98 份網站特徵向量
+├── clustering_results/                  # 聚類分組名單
+│   ├── websites_full-opt-out.csv
+│   ├── websites_partial-opt-out-ai-targeted.csv
+│   └── websites_partial-opt-out-rate-limited.csv
+├── analysis_summary/                    # 統計分析摘要 (SMD)
+│   └── summary_all_features_with_smd.csv
+├── src/                                 # K-means 與 PCA 實作腳本
+├── docs/                                # 論文 PDF 與發表簡報
+└── README.md
