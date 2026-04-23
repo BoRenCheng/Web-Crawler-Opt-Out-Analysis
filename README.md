@@ -35,11 +35,11 @@
 
 ---
 
-## 🎓 發表紀錄與引用 (Publication & Citation)
+## 發表紀錄與引用
 本研究由 鄭博仁 (Bo-Ren Cheng) 於 2026 年 4 月在日本東京 早稻田大學 (Waseda University) 進行口頭發表。
 
 
-## 📂 儲存庫結構 (Repository Structure)
+## 儲存庫結構
 ```text
 /
 ├── data_collection/
