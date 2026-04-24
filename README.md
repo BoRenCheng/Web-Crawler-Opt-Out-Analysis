@@ -34,6 +34,10 @@
 * **統計驗證**: 提供各聚類特徵的平均值、標準差與標準化平均差異 (SMD)，驗證聚類結果的科學顯著性。
 
 ---
+研討會_論文.pdf
+* **相關文件**: [研討會參與證明](研討會_參與證明.jpg)
+* [Clustering-Based Big Data Analysis of Web Crawler Opt-Out Strategies: A Scientific Approach to Robots.txt Governance](研討會_論文.pdf)
+
 
 ## 發表紀錄與引用
 本研究由 鄭博仁 (Bo-Ren Cheng) 於 2026 年 4 月在日本東京 早稻田大學 (Waseda University) 進行口頭發表。
