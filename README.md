@@ -36,7 +36,7 @@
 ---
 研討會_論文.pdf
 * **相關文件**: [研討會參與證明](研討會_參與證明.jpg)
-* [Clustering-Based Big Data Analysis of Web Crawler Opt-Out Strategies: A Scientific Approach to Robots.txt Governance](研討會_論文.pdf)
+* **研討會論文**: [Clustering-Based Big Data Analysis of Web Crawler Opt-Out Strategies: A Scientific Approach to Robots.txt Governance](研討會_論文.pdf)
 
 
 ## 發表紀錄與引用
